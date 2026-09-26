@@ -1,12 +1,11 @@
-USE Department01DB;
+USE assignmentdb;
 
-CREATE TABLE student71(
-    Student71ID INT(5) PRIMARY KEY,
-    Student71Name VARCHAR(20) NOT NULL,
+DROP TABLE IF EXISTS Student;
+
+CREATE TABLE Student (
+    StudentID INT PRIMARY KEY,
+    StudentName VARCHAR(50),
     Gender VARCHAR(10),
-    DepartmentID INT(5) NOT NULL,
-    CONSTRAINT UQ_Student71Name UNIQUE(Student71Name), 
-    CONSTRAINT FK_DepartmentID FOREIGN KEY (DepartmentID) REFERENCES department(DepartmentID)
+    DepartmentID INT
 );
 
-DESC student71;
